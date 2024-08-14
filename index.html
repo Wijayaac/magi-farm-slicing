@@ -2,86 +2,152 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Responsive Navbar</title>
-	<link rel="stylesheet" href="./assets/style.css">
-	<script src="./assets/nav.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <!-- Swiper -->
+  <link rel="stylesheet" href="assets/swiper-bundle.min.css">
+  <script src="assets/swiper-bundle.min.js" defer></script>
+  <!-- Main assets -->
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/nav.js" defer></script>
 </head>
 
 <body>
-	<header class="header">
-		<div class="header__wrapper">
-			<div class="header__logo">
-				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-					<path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917" />
-					<path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691" />
-					<path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44" />
-					<path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917" />
-				</svg>
-			</div>
-			<button class="header__toggle" aria-controls="header__nav" aria-expanded="false">
-				<span class="sr-only">Menu</span>
-				<span class="open">
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
-						<path fill="black" fill-rule="evenodd" d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5" clip-rule="evenodd" />
-					</svg>
-				</span>
-				<span class="close">
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-						<g fill="none" fill-rule="evenodd">
-							<path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-							<path fill="black" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
-						</g>
-					</svg>
-				</span>
-			</button>
-			<nav class="nav" data-visible="false">
-				<ul class="header__nav">
-					<li class="nav__item">
-						<a href="index.html" class="nav__link"> Home </a>
-					</li>
-					<li class="nav__item">
-						<a href="index.html" class="nav__link"> About </a>
-					</li>
-					<li class="nav__item">
-						<a href="index.html" class="nav__link"> News </a>
-					</li>
-					<li class="nav__item">
-						<a href="index.html" class="nav__link"> Grower Discount </a>
-					</li>
-					<li class="nav__item">
-						<a href="index.html" class="nav__link"> Contact </a>
-					</li>
-					<li class="nav__item nav__item--mobile">
-						<a href="/" class="nav__link nav__link--cta">
-							<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
-								<path d="M18.3081 5.24856C18.2136 4.29293 17.8366 3.3653 17.6058 2.4212C17.4557 1.80657 17.3249 1.18738 17.207 0.566587C17.1497 0.269087 17.0609 0.167064 16.7479 0.314647C16.0511 0.644336 15.3611 1.01388 14.6291 1.23625C13.2525 1.64765 11.9589 2.29796 10.8075 3.15747C11.1178 3.41614 11.2974 3.57322 11.2974 3.57322C11.2974 3.57322 15.8481 10.4776 14.3306 16.7162C14.3204 16.7554 14.3092 16.7934 14.2991 16.8326C14.4544 16.6983 14.5969 16.5498 14.7247 16.3891C17.2293 13.0975 18.7266 9.46732 18.3081 5.24856Z" fill="white" />
-								<path d="M1.34619 12.9485C1.69773 14.4679 2.23625 15.9028 3.2246 17.1305C5.51437 19.9749 10.1334 19.7654 12.0332 16.7309C12.794 15.5161 12.9318 14.1591 12.7726 12.785C12.4264 9.81567 11.4466 7.06538 9.68468 4.62709C8.59213 3.0873 7.11977 1.85641 5.41073 1.05406C5.05919 0.888442 4.78994 0.549731 4.4758 0.299705C4.37429 0.2185 4.20547 0.0795953 4.15525 0.11165C4.04156 0.201957 3.95777 0.324478 3.91484 0.463184C3.76846 0.817922 3.7129 1.23463 3.49386 1.53167C0.942307 5.00106 0.434774 8.83907 1.34619 12.9485Z" fill="white" />
-							</svg>
-							<span>Shop the seed</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="nav nav--cta">
-				<a href="/" class="nav__link nav__link--cta">
-					<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
-						<path d="M18.3081 5.24856C18.2136 4.29293 17.8366 3.3653 17.6058 2.4212C17.4557 1.80657 17.3249 1.18738 17.207 0.566587C17.1497 0.269087 17.0609 0.167064 16.7479 0.314647C16.0511 0.644336 15.3611 1.01388 14.6291 1.23625C13.2525 1.64765 11.9589 2.29796 10.8075 3.15747C11.1178 3.41614 11.2974 3.57322 11.2974 3.57322C11.2974 3.57322 15.8481 10.4776 14.3306 16.7162C14.3204 16.7554 14.3092 16.7934 14.2991 16.8326C14.4544 16.6983 14.5969 16.5498 14.7247 16.3891C17.2293 13.0975 18.7266 9.46732 18.3081 5.24856Z" fill="white" />
-						<path d="M1.34619 12.9485C1.69773 14.4679 2.23625 15.9028 3.2246 17.1305C5.51437 19.9749 10.1334 19.7654 12.0332 16.7309C12.794 15.5161 12.9318 14.1591 12.7726 12.785C12.4264 9.81567 11.4466 7.06538 9.68468 4.62709C8.59213 3.0873 7.11977 1.85641 5.41073 1.05406C5.05919 0.888442 4.78994 0.549731 4.4758 0.299705C4.37429 0.2185 4.20547 0.0795953 4.15525 0.11165C4.04156 0.201957 3.95777 0.324478 3.91484 0.463184C3.76846 0.817922 3.7129 1.23463 3.49386 1.53167C0.942307 5.00106 0.434774 8.83907 1.34619 12.9485Z" fill="white" />
-					</svg>
-					<span>Shop the seed</span>
-				</a>
-			</nav>
-		</div>
-	</header>
-	<main>
-		<section class="hero">
-			<h1>Responsive Header Navigation</h1>
-		</section>
-	</main>
-	<footer></footer>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__logo">
+        <img src="/assets/imgs/header-logo.svg" alt="Magi Farm Logo">
+      </div>
+      <button class="header__toggle" aria-controls="header__nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <span class="open">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+            <path fill="black" fill-rule="evenodd" d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <span class="close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="evenodd">
+              <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+              <path fill="black" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
+            </g>
+          </svg>
+        </span>
+      </button>
+      <nav class="nav" data-visible="false">
+        <ul class="header__nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav__item nav__item-has-submenu">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">
+                <span>Service</span>
+              </a>
+              <button class="nav__icon nav__submenu-toggle" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 48 48">
+                  <path fill="currentColor" d="M8.44 15.94a1.5 1.5 0 0 1 2.12 0L24 29.378l13.44-13.44a1.5 1.5 0 0 1 2.12 2.122l-14.5 14.5a1.5 1.5 0 0 1-2.12 0l-14.5-14.5a1.5 1.5 0 0 1 0-2.122"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="nav__submenu-wrapper">
+              <ul class="nav__submenu">
+                <li class="nav__item nav__item-sub">
+                  <a href="index.html" class="nav__link">Service 1</a>
+                </li>
+                <li class="nav__item nav__item-sub">
+                  <a href="index.html" class="nav__link">Service 1</a>
+                </li>
+                <li class="nav__item nav__item-sub">
+                  <a href="index.html" class="nav__link">Service 1</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item">
+            <a href="/" class="nav__link nav__link--cta">
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Responsive Header Navigation</h1>
+    </section>
+    <section class="section testimonial">
+      <div class="testimonial__header">
+        <span class="highlight">testimonial</span>
+        <h2 class="h2">Hear from <br>Our Happy Clients!</h2>
+      </div>
+      <div class="testimonial__body">
+        <div class="testimonial__wrapper">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial__card">
+                  <div class="testimonial__image">
+                    <img src="/assets/imgs/testimonials-profile.jpeg" alt="">
+                  </div>
+                  <div class="testimonial__content">
+                    <span class="testimonial__role">Director of Magi Company</span>
+                    <h3 class="testimonial__name">Skylar Ekstrom Bothman</h3>
+                    <p class="testimonial__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial__card">
+                  <div class="testimonial__image">
+                    <img src="/assets/imgs/testimonials-profile.jpeg" alt="">
+                  </div>
+                  <div class="testimonial__content">
+                    <span class="testimonial__role">Director of Magi Company</span>
+                    <h3 class="testimonial__name">Skylar Ekstrom Bothman</h3>
+                    <p class="testimonial__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial__card">
+                  <div class="testimonial__image">
+                    <img src="/assets/imgs/testimonials-profile.jpeg" alt="">
+                  </div>
+                  <div class="testimonial__content">
+                    <span class="testimonial__role">Director of Magi Company</span>
+                    <h3 class="testimonial__name">Skylar Ekstrom Bothman</h3>
+                    <p class="testimonial__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial__card">
+                  <div class="testimonial__image">
+                    <img src="/assets/imgs/testimonials-profile.jpeg" alt="">
+                  </div>
+                  <div class="testimonial__content">
+                    <span class="testimonial__role">Director of Magi Company</span>
+                    <h3 class="testimonial__name">Skylar Ekstrom Bothman</h3>
+                    <p class="testimonial__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
 </body>
 
 </html>
