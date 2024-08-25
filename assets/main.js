@@ -24,19 +24,23 @@ function headerNavigation() {
   }
 
   submenuToggle.forEach(function (toggle) {
-    toggle.addEventListener("click", function () {
-      const parentSubmenu = toggle.closest(".nav__item");
-      const navSubmenu = parentSubmenu.querySelector(".nav__submenu");
-      let submenuHeight = navSubmenu.getBoundingClientRect().height;
-      if (parentSubmenu.classList.contains("active")) {
-        parentSubmenu.classList.remove("active");
-        navSubmenu.parentElement.removeAttribute("style");
-        return;
-      }
+    toggleDropdown(toggle);
+  });
+}
 
-      parentSubmenu.classList.add("active");
-      navSubmenu.parentElement.style.height = submenuHeight + "px";
-    });
+function toggleDropdown(toggle) {
+  toggle.addEventListener("click", function () {
+    const parentSubmenu = toggle.closest(".nav__item");
+    const navSubmenu = parentSubmenu.querySelector(".nav__submenu");
+    let submenuHeight = navSubmenu.getBoundingClientRect().height;
+    if (parentSubmenu.classList.contains("active")) {
+      parentSubmenu.classList.remove("active");
+      navSubmenu.parentElement.removeAttribute("style");
+      return;
+    }
+
+    parentSubmenu.classList.add("active");
+    navSubmenu.parentElement.style.height = submenuHeight + "px";
   });
 }
 
