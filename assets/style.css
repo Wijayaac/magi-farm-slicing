@@ -2,6 +2,7 @@
   --white: #fff0f7;
   --black: #141414;
   --magi-green: #839C4C;
+  --magi-blue: #4F98CB;
 }
 
 body {
@@ -139,6 +140,18 @@ h5 {
 
 .nav__link--cta {
   display: flex;
+  gap: 8px;
+  background-color: var(--magi-blue);
+  color: var(--white);
+  font-size: 18px;
+  line-height: 23.4px;
+  padding: 12px 24px;
+  border-radius: 28px;
+}
+
+.nav__link--cta svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* Submenu */
