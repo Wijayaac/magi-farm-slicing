@@ -12,9 +12,11 @@ function headerNavigation() {
     if (isExpanded === "false") {
       headerToggle.setAttribute("aria-expanded", "true");
       headerNav.setAttribute("data-visible", "true");
+      headerElm.classList.add("drawer-open");
     } else {
       headerToggle.setAttribute("aria-expanded", "false");
       headerNav.setAttribute("data-visible", "false");
+      headerElm.classList.remove("drawer-open");
     }
   });
 
