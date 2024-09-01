@@ -3,10 +3,11 @@
   --black: #141414;
   --magi-green: #839C4C;
   --magi-blue: #4F98CB;
+  --magi-blue-hover: #296690;
 }
 
 body {
-  height: 97vh;
+  min-height: 120vh;
   font-size: 100%;
   font-family: "Radio Canada Big", sans-serif;
   overflow-x: hidden;
@@ -49,6 +50,12 @@ h5 {
   margin-bottom: 16px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* Header components */
 
 .header {
@@ -57,9 +64,16 @@ h5 {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #eee;
+  background-color: transparent;
   z-index: 9999;
+  transition: background-color 400ms, 400ms ease;
 }
+
+.header.scrolled {
+  background-color: #fff;
+  transition: background-color 400ms, 400ms ease;
+}
+
 
 .header__wrapper {
   display: flex;
@@ -68,6 +82,11 @@ h5 {
   padding: 20px 80px;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
 }
 
 .header__logo img {
@@ -95,6 +114,11 @@ h5 {
   transition: opacity .3s ease-in-out;
 }
 
+.header__toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
 .header__toggle .open,
 .header__toggle[aria-expanded=true] .close {
   opacity: 1;
@@ -108,12 +132,6 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.header ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .nav {
@@ -136,6 +154,8 @@ h5 {
 .nav__link {
   color: #000;
   text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .nav__link--cta {
@@ -147,6 +167,12 @@ h5 {
   line-height: 23.4px;
   padding: 12px 24px;
   border-radius: 28px;
+  transition: background-color 400ms, 400ms ease;
+}
+
+.nav__link--cta:hover {
+  background-color: var(--magi-blue-hover);
+  transition: background-color 400ms, 400ms ease;
 }
 
 .nav__link--cta svg {
@@ -189,6 +215,8 @@ h5 {
   transform: rotate(0deg);
   transition: transform .3s ease-in-out;
   line-height: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .nav__item-has-submenu:hover .nav__icon svg,
@@ -197,8 +225,8 @@ h5 {
 }
 
 .nav__submenu {
-  background-color: #eee;
-  padding: 10px;
+  background-color: #fff;
+  padding: 10px 20px;
 }
 
 .nav__item-sub {
@@ -230,6 +258,22 @@ h5 {
     height: 100%;
     align-items: flex-start;
     justify-content: flex-start;
+    position: relative;
+  }
+
+  ul.header__nav {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .header__nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    background-color: #eee;
   }
 
   .nav {
@@ -243,19 +287,28 @@ h5 {
     right: 0;
     bottom: 0;
     transition: transform .3s ease-in-out;
-    padding: 60px 20px;
+    padding: 60px 25px;
+    overflow: hidden;
+  }
+
+  .nav__link {
+    font-size: 24px;
+  }
+
+  .nav__item-sub .nav__link {
+    font-size: 20px;
   }
 
   .nav--cta {
     display: none;
   }
 
-  .nav__link {
-    color: var(--black);
-  }
-
   .nav__item {
     margin: 10px 0;
+  }
+
+  .nav__item-has-submenu {
+    width: 100%;
   }
 
   .nav__item--mobile {
@@ -270,7 +323,9 @@ h5 {
   .nav__icon {
     position: absolute;
     pointer-events: visible;
-    right: -40px;
+    right: 0;
+    width: 40px;
+    height: 40px;
   }
 
   .nav__submenu {

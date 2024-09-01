@@ -26,6 +26,8 @@ function headerNavigation() {
   submenuToggle.forEach(function (toggle) {
     toggleDropdown(toggle);
   });
+
+  headerScroll();
 }
 
 function toggleDropdown(toggle) {
@@ -64,6 +66,16 @@ function testimonialSlider() {
   );
 }
 
+function headerScroll() {
+  const headerElm = document.querySelector(".header");
+  if (!headerElm) {
+    return;
+  }
+
+  window.addEventListener("scroll", function () {
+    headerElm.classList.toggle("scrolled", window.scrollY > 0);
+  });
+}
 window.addEventListener("DOMContentLoaded", function () {
   headerNavigation();
   testimonialSlider();
