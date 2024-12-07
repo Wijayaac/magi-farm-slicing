@@ -1,3 +1,42 @@
+/* Fonts CSS */
+@font-face {
+  font-family: 'Radio Canada Big';
+  src: url('fonts/RadioCanadaBig-Bold.woff2') format('woff2'),
+    url('fonts/RadioCanadaBig-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Radio Canada Big';
+  src: url('fonts/RadioCanadaBig-BoldItalic.woff2') format('woff2'),
+    url('fonts/RadioCanadaBig-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Radio Canada Big';
+  src: url('fonts/RadioCanadaBig-Regular.woff2') format('woff2'),
+    url('fonts/RadioCanadaBig-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Radio Canada Big';
+  src: url('fonts/RadioCanadaBig-Italic.woff2') format('woff2'),
+    url('fonts/RadioCanadaBig-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* End Fonts css */
+
 :root {
   --white: #fff0f7;
   --black: #141414;
@@ -496,6 +535,48 @@ ul {
   font-weight: 600;
 }
 
+/* New Testimonial Pagination */
+.testimonial__wrapper .swiper-slide {
+  width: 270px;
+  margin-right: 0;
+}
+
+.testimonial__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  position: relative;
+  max-width: max-content;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial__button {
+  position: relative;
+  margin: 0 10px;
+}
+
+.swiper-navigation-button {
+  width: 40px;
+  height: 40px;
+  background-color: #839C4C;
+  border-radius: 100%;
+  --swiper-navigation-color: #fff;
+  --swiper-navigation-size: 24px;
+  transition: background-color 400ms, 400ms ease;
+}
+
+.swiper-navigation-button:hover {
+  background-color: #60782B;
+  transition: background-color 400ms, 400ms ease;
+}
+
+.testimonial__button::after {
+  content: none;
+}
+
 @media screen and (min-width: 992px) {
   .testimonial {
     padding: 120px 0;
@@ -515,6 +596,12 @@ ul {
     gap: 24px;
     border-radius: 24px;
     padding: 38px 32px;
+  }
+
+  /* New Testimonial pagination  */
+  .testimonial__wrapper .swiper-slide {
+    width: 800px;
+    margin-right: 20px;
   }
 }
 
